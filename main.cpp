@@ -87,8 +87,8 @@ HittableList random_scene() {
     auto material_ground = std::make_shared<strangeloop::Lambertian>(Color(0.5,0.5,0.5));
     world.add(make_shared<Sphere>(Point(0,-1000,0),1000,material_ground));
 
-    for (int a = -11; a < 11; a++) {
-        for (int b = -11; b < 11; b++) {
+    for (int a = -3; a < 3; a++) {
+        for (int b = -3; b < 3; b++) {
             auto choose = strangeloop::randomDouble(0,1);
             Point center(a + 0.9*strangeloop::randomDouble(0,1),0.2,b + 0.9*strangeloop::randomDouble(0,1));
             if ((center - Point(4,0.2,0)).length() > 0.9) {
@@ -132,7 +132,7 @@ int main()
     auto aspectRatio = 3.0/2.0;
     int imgWidth = 1200;
     int imgHeight = static_cast<int>(imgWidth/aspectRatio);
-    const int maxDepth = 50;
+    const int maxDepth = 5;
 
     // Camera and viewport setup
     Point lookFrom(13,2,3);
@@ -141,7 +141,7 @@ int main()
     double aperture = 0.1;
     double focusDist = 10.0;
     Camera cam(lookFrom, lookAt, vup, 20.0, aspectRatio, aperture, focusDist);
-    const int samplesPerPixel = 500;
+    const int samplesPerPixel = 10;
 
     // World
     auto world = random_scene();
