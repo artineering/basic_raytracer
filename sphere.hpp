@@ -22,6 +22,9 @@ public:
 
     virtual bool hit(const Ray& r, double tMin, double tMax, HitRecord& rec) const override;
 
+    Point center() const;
+    double radius() const;
+
 private:
     Point _center;
     double _radius;

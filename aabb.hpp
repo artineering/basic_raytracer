@@ -2,6 +2,7 @@
 #define AABB_HPP
 
 #include "ray.hpp"
+#include "sphere.hpp"
 #include "common.hpp"
 
 namespace strangeloop {
@@ -16,7 +17,8 @@ public:
     Point getMax() const;
 
     bool test(const AABB& target) const; // test intersection with another bounding box.
-    bool test(const Ray& ray) const; // test intersection with a ray.
+    bool test(const Ray& ray, Point& coord) const; // test intersection with a ray.
+    bool test(const Sphere& sphere) const; // test intersection with a sphere.
 protected:
     Point center;
     double size[3];

@@ -48,3 +48,13 @@ bool Sphere::hit(const strangeloop::Ray &r, double tMin, double tMax, strangeloo
     return true;
 }
 
+Point Sphere::center() const
+{
+    return _center;
+}
+
+double Sphere::radius() const
+{
+    return _radius;
+}
+
