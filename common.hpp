@@ -7,6 +7,7 @@
 
 #include <cmath>
 #include <random>
+#include <memory>
 
 #include "vector3.hpp"
 

@@ -117,6 +117,6 @@ bool AABB::test(const Sphere &sphere) const
     double radius = sphere.radius();
     double a, b, dmin, dmax;
     double r2 = sqrt(radius);
-
+    return true;
 }
 
